@@ -251,20 +251,19 @@ export default function HomePage() {
         </div>
 
         {/* Main Headline */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-5xl leading-[1.1]">
-          Autonomous Tax Intelligence.{' '}
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-4xl leading-[1.1]">
+          File Taxes with AI.{' '}
           <span className="text-gradient-emerald block sm:inline">
-            Zero Document Retention.
+            Zero Files Stored.
           </span>{' '}
           <span className="text-gradient-cyan block sm:inline">
-            Pure Deterministic Execution.
+            100% Accurate.
           </span>
         </h1>
 
         {/* Subhead */}
-        <p className="mt-6 text-lg sm:text-xl text-slate-300 max-w-3xl leading-relaxed">
-          Autonomous AI agents extract your tax forms in volatile RAM, uncover every legal deduction, and guard against audit triggers — with every dollar computed by audited, 100% deterministic mathematical execution.
-          <span className="text-emerald-400 font-semibold"> No files stored. No math hallucinations. No surprise fees.</span>
+        <p className="mt-6 text-base sm:text-xl text-slate-300 max-w-2xl leading-relaxed">
+          Upload your W-2 or tax forms. Our AI extracts your numbers in temporary RAM and calculates your exact 2026 refund in seconds — with pure mathematical accuracy and zero files kept on disk.
         </p>
 
         {/* Action Buttons */}

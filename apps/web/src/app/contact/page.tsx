@@ -239,14 +239,12 @@ export default function ContactPage() {
                 <Globe className="w-4 h-4" />
               </div>
               <div>
-                <div className="font-semibold text-white">Open Source & Auditing</div>
+                <div className="font-semibold text-white">Privacy &amp; Security Desk</div>
                 <a
-                  href="https://github.com/anttonyraj/taxfilex"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="mailto:security@taxfilex.com"
                   className="text-emerald-400 hover:underline"
                 >
-                  github.com/anttonyraj/taxfilex
+                  security@taxfilex.com
                 </a>
               </div>
             </div>
