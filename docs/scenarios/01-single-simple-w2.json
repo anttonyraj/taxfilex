@@ -1,0 +1,48 @@
+{
+  "scenarioId": "01-single-simple-w2",
+  "description": "Single filer with 1 W-2, standard deduction, refund",
+  "input": {
+    "taxYear": 2026,
+    "filingStatus": "SINGLE",
+    "filer": {
+      "ageOnDec31": 28,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "dependents": [],
+    "documents": [
+      {
+        "id": "w2-01",
+        "type": "W2",
+        "w2": {
+          "id": "w2-01",
+          "employerName": "Synthetic Alpha Inc",
+          "employerEin": "00-0000001",
+          "box1Wages": 55000,
+          "box2FederalTaxWithheld": 6200
+        }
+      }
+    ],
+    "answers": {}
+  },
+  "expected": {
+    "lines": {
+      "1040_1a": 55000,
+      "1040_11": 55000,
+      "1040_12": 15700,
+      "1040_15": 39300,
+      "1040_16": 4468,
+      "1040_19": 0,
+      "1040_24": 4468,
+      "1040_25a": 6200,
+      "1040_33": 6200,
+      "1040_34": 1732,
+      "1040_37": 0
+    },
+    "forms": [
+      "1040"
+    ],
+    "scopeFlagCodes": [],
+    "warningsCount": 0
+  }
+}

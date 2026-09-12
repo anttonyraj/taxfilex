@@ -1,0 +1,58 @@
+{
+  "scenarioId": "19-single-other-dependent-odc",
+  "description": "Single filer claiming elderly parent as dependent ($500 ODC)",
+  "input": {
+    "taxYear": 2026,
+    "filingStatus": "SINGLE",
+    "filer": {
+      "ageOnDec31": 41,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "dependents": [
+      {
+        "id": "p19",
+        "relationship": "OTHER",
+        "monthsInHome": 12,
+        "underAge17AtEndOfYear": false,
+        "hasSsn": true,
+        "isClaimedByUser": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "w2-19",
+        "type": "W2",
+        "w2": {
+          "id": "w2-19",
+          "employerName": "Metro Regional Hospital",
+          "employerEin": "00-0000023",
+          "box1Wages": 70000,
+          "box2FederalTaxWithheld": 7500
+        }
+      }
+    ],
+    "answers": {}
+  },
+  "expected": {
+    "lines": {
+      "1040_1a": 70000,
+      "1040_11": 70000,
+      "1040_12": 15700,
+      "1040_15": 54300,
+      "1040_16": 6658,
+      "1040_19": 500,
+      "1040_24": 6158,
+      "1040_25a": 7500,
+      "1040_33": 7500,
+      "1040_34": 1342,
+      "1040_37": 0
+    },
+    "forms": [
+      "1040",
+      "Schedule 8812"
+    ],
+    "scopeFlagCodes": [],
+    "warningsCount": 0
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "scenarioId": "25-mfj-large-balance-due-underpayment-warning",
+  "description": "MFJ with large underwithholding triggering underpayment penalty warning (> $1,000)",
+  "input": {
+    "taxYear": 2026,
+    "filingStatus": "MARRIED_FILING_JOINTLY",
+    "filer": {
+      "ageOnDec31": 46,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "spouse": {
+      "ageOnDec31": 45,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "dependents": [],
+    "documents": [
+      {
+        "id": "w2-25",
+        "type": "W2",
+        "w2": {
+          "id": "w2-25",
+          "employerName": "Capital Growth Partners",
+          "employerEin": "00-0000030",
+          "box1Wages": 160000,
+          "box2FederalTaxWithheld": 10000
+        }
+      }
+    ],
+    "answers": {}
+  },
+  "expected": {
+    "lines": {
+      "1040_1a": 160000,
+      "1040_11": 160000,
+      "1040_12": 31400,
+      "1040_15": 128600,
+      "1040_16": 17716,
+      "1040_19": 0,
+      "1040_24": 17716,
+      "1040_25a": 10000,
+      "1040_33": 10000,
+      "1040_34": 0,
+      "1040_37": 7716
+    },
+    "forms": [
+      "1040"
+    ],
+    "scopeFlagCodes": [],
+    "warningsCount": 1
+  }
+}

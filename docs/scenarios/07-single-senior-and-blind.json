@@ -1,0 +1,48 @@
+{
+  "scenarioId": "07-single-senior-and-blind",
+  "description": "Single filer age 68 and blind (receives double additional deduction)",
+  "input": {
+    "taxYear": 2026,
+    "filingStatus": "SINGLE",
+    "filer": {
+      "ageOnDec31": 68,
+      "isBlind": true,
+      "canBeClaimedAsDependent": false
+    },
+    "dependents": [],
+    "documents": [
+      {
+        "id": "w2-07",
+        "type": "W2",
+        "w2": {
+          "id": "w2-07",
+          "employerName": "Senior Adv Tech",
+          "employerEin": "00-0000010",
+          "box1Wages": 50000,
+          "box2FederalTaxWithheld": 4500
+        }
+      }
+    ],
+    "answers": {}
+  },
+  "expected": {
+    "lines": {
+      "1040_1a": 50000,
+      "1040_11": 50000,
+      "1040_12": 19800,
+      "1040_15": 30200,
+      "1040_16": 3376,
+      "1040_19": 0,
+      "1040_24": 3376,
+      "1040_25a": 4500,
+      "1040_33": 4500,
+      "1040_34": 1124,
+      "1040_37": 0
+    },
+    "forms": [
+      "1040"
+    ],
+    "scopeFlagCodes": [],
+    "warningsCount": 0
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "scenarioId": "12-mfj-one-senior-one-blind",
+  "description": "MFJ where primary is 65+ and spouse is legally blind",
+  "input": {
+    "taxYear": 2026,
+    "filingStatus": "MARRIED_FILING_JOINTLY",
+    "filer": {
+      "ageOnDec31": 68,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "spouse": {
+      "ageOnDec31": 62,
+      "isBlind": true,
+      "canBeClaimedAsDependent": false
+    },
+    "dependents": [],
+    "documents": [
+      {
+        "id": "w2-12",
+        "type": "W2",
+        "w2": {
+          "id": "w2-12",
+          "employerName": "United Health Services",
+          "employerEin": "00-0000016",
+          "box1Wages": 78000,
+          "box2FederalTaxWithheld": 6000
+        }
+      }
+    ],
+    "answers": {}
+  },
+  "expected": {
+    "lines": {
+      "1040_1a": 78000,
+      "1040_11": 78000,
+      "1040_12": 34700,
+      "1040_15": 43300,
+      "1040_16": 4700,
+      "1040_19": 0,
+      "1040_24": 4700,
+      "1040_25a": 6000,
+      "1040_33": 6000,
+      "1040_34": 1300,
+      "1040_37": 0
+    },
+    "forms": [
+      "1040"
+    ],
+    "scopeFlagCodes": [],
+    "warningsCount": 0
+  }
+}

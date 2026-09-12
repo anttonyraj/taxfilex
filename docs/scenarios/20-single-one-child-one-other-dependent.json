@@ -1,0 +1,67 @@
+{
+  "scenarioId": "20-single-one-child-one-other-dependent",
+  "description": "Single filer claiming 1 child under 17 and 1 college student ($2,500 total credits)",
+  "input": {
+    "taxYear": 2026,
+    "filingStatus": "SINGLE",
+    "filer": {
+      "ageOnDec31": 44,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "dependents": [
+      {
+        "id": "c20",
+        "relationship": "CHILD",
+        "monthsInHome": 12,
+        "underAge17AtEndOfYear": true,
+        "hasSsn": true,
+        "isClaimedByUser": true
+      },
+      {
+        "id": "s20",
+        "relationship": "OTHER",
+        "monthsInHome": 12,
+        "underAge17AtEndOfYear": false,
+        "isStudentUnder24": true,
+        "hasSsn": true,
+        "isClaimedByUser": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "w2-20",
+        "type": "W2",
+        "w2": {
+          "id": "w2-20",
+          "employerName": "City School District",
+          "employerEin": "00-0000024",
+          "box1Wages": 82000,
+          "box2FederalTaxWithheld": 8000
+        }
+      }
+    ],
+    "answers": {}
+  },
+  "expected": {
+    "lines": {
+      "1040_1a": 82000,
+      "1040_11": 82000,
+      "1040_12": 15700,
+      "1040_15": 66300,
+      "1040_16": 9298,
+      "1040_19": 2500,
+      "1040_24": 6798,
+      "1040_25a": 8000,
+      "1040_33": 8000,
+      "1040_34": 1202,
+      "1040_37": 0
+    },
+    "forms": [
+      "1040",
+      "Schedule 8812"
+    ],
+    "scopeFlagCodes": [],
+    "warningsCount": 0
+  }
+}

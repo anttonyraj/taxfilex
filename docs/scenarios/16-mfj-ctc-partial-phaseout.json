@@ -1,0 +1,63 @@
+{
+  "scenarioId": "16-mfj-ctc-partial-phaseout",
+  "description": "MFJ with high income exceeding $400,000 threshold, partial CTC phaseout",
+  "input": {
+    "taxYear": 2026,
+    "filingStatus": "MARRIED_FILING_JOINTLY",
+    "filer": {
+      "ageOnDec31": 48,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "spouse": {
+      "ageOnDec31": 47,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "dependents": [
+      {
+        "id": "c16",
+        "relationship": "CHILD",
+        "monthsInHome": 12,
+        "underAge17AtEndOfYear": true,
+        "hasSsn": true,
+        "isClaimedByUser": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "w2-16",
+        "type": "W2",
+        "w2": {
+          "id": "w2-16",
+          "employerName": "Executive Consulting Partners",
+          "employerEin": "00-0000020",
+          "box1Wages": 415000,
+          "box2FederalTaxWithheld": 85000
+        }
+      }
+    ],
+    "answers": {}
+  },
+  "expected": {
+    "lines": {
+      "1040_1a": 415000,
+      "1040_11": 415000,
+      "1040_12": 31400,
+      "1040_15": 383600,
+      "1040_16": 77194,
+      "1040_19": 1250,
+      "1040_24": 75944,
+      "1040_25a": 85000,
+      "1040_33": 85000,
+      "1040_34": 9056,
+      "1040_37": 0
+    },
+    "forms": [
+      "1040",
+      "Schedule 8812"
+    ],
+    "scopeFlagCodes": [],
+    "warningsCount": 0
+  }
+}

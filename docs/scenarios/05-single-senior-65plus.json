@@ -1,0 +1,48 @@
+{
+  "scenarioId": "05-single-senior-65plus",
+  "description": "Single filer age 67, receiving additional standard deduction for seniors",
+  "input": {
+    "taxYear": 2026,
+    "filingStatus": "SINGLE",
+    "filer": {
+      "ageOnDec31": 67,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "dependents": [],
+    "documents": [
+      {
+        "id": "w2-05",
+        "type": "W2",
+        "w2": {
+          "id": "w2-05",
+          "employerName": "Consulting Senior Corp",
+          "employerEin": "00-0000008",
+          "box1Wages": 42000,
+          "box2FederalTaxWithheld": 3800
+        }
+      }
+    ],
+    "answers": {}
+  },
+  "expected": {
+    "lines": {
+      "1040_1a": 42000,
+      "1040_11": 42000,
+      "1040_12": 17750,
+      "1040_15": 24250,
+      "1040_16": 2662,
+      "1040_19": 0,
+      "1040_24": 2662,
+      "1040_25a": 3800,
+      "1040_33": 3800,
+      "1040_34": 1138,
+      "1040_37": 0
+    },
+    "forms": [
+      "1040"
+    ],
+    "scopeFlagCodes": [],
+    "warningsCount": 0
+  }
+}

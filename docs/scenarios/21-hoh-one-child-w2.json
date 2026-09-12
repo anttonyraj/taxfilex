@@ -1,0 +1,58 @@
+{
+  "scenarioId": "21-hoh-one-child-w2",
+  "description": "Head of Household filer with 1 child, receiving HOH standard deduction and CTC",
+  "input": {
+    "taxYear": 2026,
+    "filingStatus": "HEAD_OF_HOUSEHOLD",
+    "filer": {
+      "ageOnDec31": 33,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "dependents": [
+      {
+        "id": "c21",
+        "relationship": "CHILD",
+        "monthsInHome": 12,
+        "underAge17AtEndOfYear": true,
+        "hasSsn": true,
+        "isClaimedByUser": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "w2-21",
+        "type": "W2",
+        "w2": {
+          "id": "w2-21",
+          "employerName": "Retail Operations Group",
+          "employerEin": "00-0000025",
+          "box1Wages": 52000,
+          "box2FederalTaxWithheld": 3900
+        }
+      }
+    ],
+    "answers": {}
+  },
+  "expected": {
+    "lines": {
+      "1040_1a": 52000,
+      "1040_11": 52000,
+      "1040_12": 23550,
+      "1040_15": 28450,
+      "1040_16": 3060,
+      "1040_19": 2000,
+      "1040_24": 1060,
+      "1040_25a": 3900,
+      "1040_33": 3900,
+      "1040_34": 2840,
+      "1040_37": 0
+    },
+    "forms": [
+      "1040",
+      "Schedule 8812"
+    ],
+    "scopeFlagCodes": [],
+    "warningsCount": 0
+  }
+}

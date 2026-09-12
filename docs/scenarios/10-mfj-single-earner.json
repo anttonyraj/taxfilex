@@ -1,0 +1,53 @@
+{
+  "scenarioId": "10-mfj-single-earner",
+  "description": "Married Filing Jointly with one spouse working and standard deduction",
+  "input": {
+    "taxYear": 2026,
+    "filingStatus": "MARRIED_FILING_JOINTLY",
+    "filer": {
+      "ageOnDec31": 42,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "spouse": {
+      "ageOnDec31": 41,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "dependents": [],
+    "documents": [
+      {
+        "id": "w2-10",
+        "type": "W2",
+        "w2": {
+          "id": "w2-10",
+          "employerName": "Sole Family Provider LLC",
+          "employerEin": "00-0000014",
+          "box1Wages": 92000,
+          "box2FederalTaxWithheld": 8200
+        }
+      }
+    ],
+    "answers": {}
+  },
+  "expected": {
+    "lines": {
+      "1040_1a": 92000,
+      "1040_11": 92000,
+      "1040_12": 31400,
+      "1040_15": 60600,
+      "1040_16": 6776,
+      "1040_19": 0,
+      "1040_24": 6776,
+      "1040_25a": 8200,
+      "1040_33": 8200,
+      "1040_34": 1424,
+      "1040_37": 0
+    },
+    "forms": [
+      "1040"
+    ],
+    "scopeFlagCodes": [],
+    "warningsCount": 0
+  }
+}

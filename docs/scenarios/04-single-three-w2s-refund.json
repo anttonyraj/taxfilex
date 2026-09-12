@@ -1,0 +1,70 @@
+{
+  "scenarioId": "04-single-three-w2s-refund",
+  "description": "Single filer with 3 small part-time W-2s, full refund",
+  "input": {
+    "taxYear": 2026,
+    "filingStatus": "SINGLE",
+    "filer": {
+      "ageOnDec31": 22,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "dependents": [],
+    "documents": [
+      {
+        "id": "w2-04a",
+        "type": "W2",
+        "w2": {
+          "id": "w2-04a",
+          "employerName": "Part-Time Job 1",
+          "employerEin": "00-0000005",
+          "box1Wages": 8000,
+          "box2FederalTaxWithheld": 600
+        }
+      },
+      {
+        "id": "w2-04b",
+        "type": "W2",
+        "w2": {
+          "id": "w2-04b",
+          "employerName": "Part-Time Job 2",
+          "employerEin": "00-0000006",
+          "box1Wages": 6000,
+          "box2FederalTaxWithheld": 450
+        }
+      },
+      {
+        "id": "w2-04c",
+        "type": "W2",
+        "w2": {
+          "id": "w2-04c",
+          "employerName": "Part-Time Job 3",
+          "employerEin": "00-0000007",
+          "box1Wages": 5000,
+          "box2FederalTaxWithheld": 350
+        }
+      }
+    ],
+    "answers": {}
+  },
+  "expected": {
+    "lines": {
+      "1040_1a": 19000,
+      "1040_11": 19000,
+      "1040_12": 15700,
+      "1040_15": 3300,
+      "1040_16": 330,
+      "1040_19": 0,
+      "1040_24": 330,
+      "1040_25a": 1400,
+      "1040_33": 1400,
+      "1040_34": 1070,
+      "1040_37": 0
+    },
+    "forms": [
+      "1040"
+    ],
+    "scopeFlagCodes": [],
+    "warningsCount": 0
+  }
+}

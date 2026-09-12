@@ -1,0 +1,48 @@
+{
+  "scenarioId": "08-single-claimed-as-dependent",
+  "description": "Single college student claimed as dependent on parents return (IRC §63(c)(5))",
+  "input": {
+    "taxYear": 2026,
+    "filingStatus": "SINGLE",
+    "filer": {
+      "ageOnDec31": 20,
+      "isBlind": false,
+      "canBeClaimedAsDependent": true
+    },
+    "dependents": [],
+    "documents": [
+      {
+        "id": "w2-08",
+        "type": "W2",
+        "w2": {
+          "id": "w2-08",
+          "employerName": "Campus Bookstore",
+          "employerEin": "00-0000011",
+          "box1Wages": 7500,
+          "box2FederalTaxWithheld": 500
+        }
+      }
+    ],
+    "answers": {}
+  },
+  "expected": {
+    "lines": {
+      "1040_1a": 7500,
+      "1040_11": 7500,
+      "1040_12": 7950,
+      "1040_15": 0,
+      "1040_16": 0,
+      "1040_19": 0,
+      "1040_24": 0,
+      "1040_25a": 500,
+      "1040_33": 500,
+      "1040_34": 500,
+      "1040_37": 0
+    },
+    "forms": [
+      "1040"
+    ],
+    "scopeFlagCodes": [],
+    "warningsCount": 0
+  }
+}

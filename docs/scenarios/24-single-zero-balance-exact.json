@@ -1,0 +1,48 @@
+{
+  "scenarioId": "24-single-zero-balance-exact",
+  "description": "Single filer where withholding exactly matches tax liability ($0 refund, $0 due)",
+  "input": {
+    "taxYear": 2026,
+    "filingStatus": "SINGLE",
+    "filer": {
+      "ageOnDec31": 27,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "dependents": [],
+    "documents": [
+      {
+        "id": "w2-24",
+        "type": "W2",
+        "w2": {
+          "id": "w2-24",
+          "employerName": "Perfect Precision LLC",
+          "employerEin": "00-0000029",
+          "box1Wages": 28100,
+          "box2FederalTaxWithheld": 1240
+        }
+      }
+    ],
+    "answers": {}
+  },
+  "expected": {
+    "lines": {
+      "1040_1a": 28100,
+      "1040_11": 28100,
+      "1040_12": 15700,
+      "1040_15": 12400,
+      "1040_16": 1240,
+      "1040_19": 0,
+      "1040_24": 1240,
+      "1040_25a": 1240,
+      "1040_33": 1240,
+      "1040_34": 0,
+      "1040_37": 0
+    },
+    "forms": [
+      "1040"
+    ],
+    "scopeFlagCodes": [],
+    "warningsCount": 0
+  }
+}

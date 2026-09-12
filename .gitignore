@@ -1,0 +1,37 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Next.js
+.next
+out
+
+# Build outputs
+dist
+build
+*.tsbuildinfo
+
+# Env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Firebase
+.firebase/
+firebase-debug.log*
+firestore-debug.log*
+ui-debug.log*
+
+# Testing & Coverage
+coverage/
+.playwright/
+test-results/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.github/

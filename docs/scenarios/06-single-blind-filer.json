@@ -1,0 +1,48 @@
+{
+  "scenarioId": "06-single-blind-filer",
+  "description": "Single filer who is legally blind, receiving additional standard deduction",
+  "input": {
+    "taxYear": 2026,
+    "filingStatus": "SINGLE",
+    "filer": {
+      "ageOnDec31": 45,
+      "isBlind": true,
+      "canBeClaimedAsDependent": false
+    },
+    "dependents": [],
+    "documents": [
+      {
+        "id": "w2-06",
+        "type": "W2",
+        "w2": {
+          "id": "w2-06",
+          "employerName": "Accessible Tech Corp",
+          "employerEin": "00-0000009",
+          "box1Wages": 60000,
+          "box2FederalTaxWithheld": 6000
+        }
+      }
+    ],
+    "answers": {}
+  },
+  "expected": {
+    "lines": {
+      "1040_1a": 60000,
+      "1040_11": 60000,
+      "1040_12": 17750,
+      "1040_15": 42250,
+      "1040_16": 4822,
+      "1040_19": 0,
+      "1040_24": 4822,
+      "1040_25a": 6000,
+      "1040_33": 6000,
+      "1040_34": 1178,
+      "1040_37": 0
+    },
+    "forms": [
+      "1040"
+    ],
+    "scopeFlagCodes": [],
+    "warningsCount": 0
+  }
+}

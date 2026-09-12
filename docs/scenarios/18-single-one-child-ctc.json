@@ -1,0 +1,58 @@
+{
+  "scenarioId": "18-single-one-child-ctc",
+  "description": "Single parent with 1 qualifying child, full $2,000 CTC",
+  "input": {
+    "taxYear": 2026,
+    "filingStatus": "SINGLE",
+    "filer": {
+      "ageOnDec31": 32,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "dependents": [
+      {
+        "id": "c18",
+        "relationship": "CHILD",
+        "monthsInHome": 12,
+        "underAge17AtEndOfYear": true,
+        "hasSsn": true,
+        "isClaimedByUser": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "w2-18",
+        "type": "W2",
+        "w2": {
+          "id": "w2-18",
+          "employerName": "Design Studios Inc",
+          "employerEin": "00-0000022",
+          "box1Wages": 65000,
+          "box2FederalTaxWithheld": 5500
+        }
+      }
+    ],
+    "answers": {}
+  },
+  "expected": {
+    "lines": {
+      "1040_1a": 65000,
+      "1040_11": 65000,
+      "1040_12": 15700,
+      "1040_15": 49300,
+      "1040_16": 5668,
+      "1040_19": 2000,
+      "1040_24": 3668,
+      "1040_25a": 5500,
+      "1040_33": 5500,
+      "1040_34": 1832,
+      "1040_37": 0
+    },
+    "forms": [
+      "1040",
+      "Schedule 8812"
+    ],
+    "scopeFlagCodes": [],
+    "warningsCount": 0
+  }
+}

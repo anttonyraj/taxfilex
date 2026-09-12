@@ -1,0 +1,53 @@
+{
+  "scenarioId": "11-mfj-both-spouses-seniors",
+  "description": "MFJ where both spouses are 65+ (receiving 2 x $1,650 additional deduction)",
+  "input": {
+    "taxYear": 2026,
+    "filingStatus": "MARRIED_FILING_JOINTLY",
+    "filer": {
+      "ageOnDec31": 67,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "spouse": {
+      "ageOnDec31": 66,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "dependents": [],
+    "documents": [
+      {
+        "id": "w2-11",
+        "type": "W2",
+        "w2": {
+          "id": "w2-11",
+          "employerName": "Senior Advisory Inc",
+          "employerEin": "00-0000015",
+          "box1Wages": 65000,
+          "box2FederalTaxWithheld": 4500
+        }
+      }
+    ],
+    "answers": {}
+  },
+  "expected": {
+    "lines": {
+      "1040_1a": 65000,
+      "1040_11": 65000,
+      "1040_12": 34700,
+      "1040_15": 30300,
+      "1040_16": 3140,
+      "1040_19": 0,
+      "1040_24": 3140,
+      "1040_25a": 4500,
+      "1040_33": 4500,
+      "1040_34": 1360,
+      "1040_37": 0
+    },
+    "forms": [
+      "1040"
+    ],
+    "scopeFlagCodes": [],
+    "warningsCount": 0
+  }
+}

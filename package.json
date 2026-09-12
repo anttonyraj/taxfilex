@@ -1,0 +1,21 @@
+{
+  "name": "taxfilex",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Privacy-first US individual tax filing for TY2026",
+  "scripts": {
+    "build": "pnpm --filter @taxfilex/shared build && pnpm --filter @taxfilex/tax-engine build && pnpm --filter @taxfilex/web build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint . --ext .ts,.tsx",
+    "typecheck": "pnpm -r exec tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5"
+  },
+  "packageManager": "pnpm@10.5.2"
+}

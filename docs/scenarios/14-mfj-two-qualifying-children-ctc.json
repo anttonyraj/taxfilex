@@ -1,0 +1,71 @@
+{
+  "scenarioId": "14-mfj-two-qualifying-children-ctc",
+  "description": "MFJ with 2 qualifying children under 17, receiving $4,000 CTC",
+  "input": {
+    "taxYear": 2026,
+    "filingStatus": "MARRIED_FILING_JOINTLY",
+    "filer": {
+      "ageOnDec31": 39,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "spouse": {
+      "ageOnDec31": 38,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "dependents": [
+      {
+        "id": "dep-14a",
+        "relationship": "CHILD",
+        "monthsInHome": 12,
+        "underAge17AtEndOfYear": true,
+        "hasSsn": true,
+        "isClaimedByUser": true
+      },
+      {
+        "id": "dep-14b",
+        "relationship": "CHILD",
+        "monthsInHome": 12,
+        "underAge17AtEndOfYear": true,
+        "hasSsn": true,
+        "isClaimedByUser": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "w2-14",
+        "type": "W2",
+        "w2": {
+          "id": "w2-14",
+          "employerName": "Midwest Logistics",
+          "employerEin": "00-0000018",
+          "box1Wages": 110000,
+          "box2FederalTaxWithheld": 9500
+        }
+      }
+    ],
+    "answers": {}
+  },
+  "expected": {
+    "lines": {
+      "1040_1a": 110000,
+      "1040_11": 110000,
+      "1040_12": 31400,
+      "1040_15": 78600,
+      "1040_16": 8936,
+      "1040_19": 4000,
+      "1040_24": 4936,
+      "1040_25a": 9500,
+      "1040_33": 9500,
+      "1040_34": 4564,
+      "1040_37": 0
+    },
+    "forms": [
+      "1040",
+      "Schedule 8812"
+    ],
+    "scopeFlagCodes": [],
+    "warningsCount": 0
+  }
+}

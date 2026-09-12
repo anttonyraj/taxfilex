@@ -1,0 +1,63 @@
+{
+  "scenarioId": "13-mfj-one-qualifying-child-ctc",
+  "description": "MFJ with 1 qualifying child under 17, receiving full $2,000 CTC",
+  "input": {
+    "taxYear": 2026,
+    "filingStatus": "MARRIED_FILING_JOINTLY",
+    "filer": {
+      "ageOnDec31": 35,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "spouse": {
+      "ageOnDec31": 34,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "dependents": [
+      {
+        "id": "dep-child-1",
+        "relationship": "CHILD",
+        "monthsInHome": 12,
+        "underAge17AtEndOfYear": true,
+        "hasSsn": true,
+        "isClaimedByUser": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "w2-13",
+        "type": "W2",
+        "w2": {
+          "id": "w2-13",
+          "employerName": "Family Solutions Corp",
+          "employerEin": "00-0000017",
+          "box1Wages": 85000,
+          "box2FederalTaxWithheld": 7200
+        }
+      }
+    ],
+    "answers": {}
+  },
+  "expected": {
+    "lines": {
+      "1040_1a": 85000,
+      "1040_11": 85000,
+      "1040_12": 31400,
+      "1040_15": 53600,
+      "1040_16": 5936,
+      "1040_19": 2000,
+      "1040_24": 3936,
+      "1040_25a": 7200,
+      "1040_33": 7200,
+      "1040_34": 3264,
+      "1040_37": 0
+    },
+    "forms": [
+      "1040",
+      "Schedule 8812"
+    ],
+    "scopeFlagCodes": [],
+    "warningsCount": 0
+  }
+}

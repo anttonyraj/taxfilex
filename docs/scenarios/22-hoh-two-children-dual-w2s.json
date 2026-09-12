@@ -1,0 +1,77 @@
+{
+  "scenarioId": "22-hoh-two-children-dual-w2s",
+  "description": "Head of Household with 2 qualifying children and two W-2s",
+  "input": {
+    "taxYear": 2026,
+    "filingStatus": "HEAD_OF_HOUSEHOLD",
+    "filer": {
+      "ageOnDec31": 36,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "dependents": [
+      {
+        "id": "c22a",
+        "relationship": "CHILD",
+        "monthsInHome": 12,
+        "underAge17AtEndOfYear": true,
+        "hasSsn": true,
+        "isClaimedByUser": true
+      },
+      {
+        "id": "c22b",
+        "relationship": "CHILD",
+        "monthsInHome": 12,
+        "underAge17AtEndOfYear": true,
+        "hasSsn": true,
+        "isClaimedByUser": true
+      }
+    ],
+    "documents": [
+      {
+        "id": "w2-22a",
+        "type": "W2",
+        "w2": {
+          "id": "w2-22a",
+          "employerName": "Primary Day Job",
+          "employerEin": "00-0000026",
+          "box1Wages": 45000,
+          "box2FederalTaxWithheld": 3200
+        }
+      },
+      {
+        "id": "w2-22b",
+        "type": "W2",
+        "w2": {
+          "id": "w2-22b",
+          "employerName": "Weekend Evening Job",
+          "employerEin": "00-0000027",
+          "box1Wages": 18000,
+          "box2FederalTaxWithheld": 1300
+        }
+      }
+    ],
+    "answers": {}
+  },
+  "expected": {
+    "lines": {
+      "1040_1a": 63000,
+      "1040_11": 63000,
+      "1040_12": 23550,
+      "1040_15": 39450,
+      "1040_16": 4380,
+      "1040_19": 4000,
+      "1040_24": 380,
+      "1040_25a": 4500,
+      "1040_33": 4500,
+      "1040_34": 4120,
+      "1040_37": 0
+    },
+    "forms": [
+      "1040",
+      "Schedule 8812"
+    ],
+    "scopeFlagCodes": [],
+    "warningsCount": 0
+  }
+}

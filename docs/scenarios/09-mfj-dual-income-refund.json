@@ -1,0 +1,64 @@
+{
+  "scenarioId": "09-mfj-dual-income-refund",
+  "description": "Married Filing Jointly with two earners and a standard refund",
+  "input": {
+    "taxYear": 2026,
+    "filingStatus": "MARRIED_FILING_JOINTLY",
+    "filer": {
+      "ageOnDec31": 38,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "spouse": {
+      "ageOnDec31": 37,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "dependents": [],
+    "documents": [
+      {
+        "id": "w2-09a",
+        "type": "W2",
+        "w2": {
+          "id": "w2-09a",
+          "employerName": "Primary Filer Employer",
+          "employerEin": "00-0000012",
+          "box1Wages": 72000,
+          "box2FederalTaxWithheld": 7800
+        }
+      },
+      {
+        "id": "w2-09b",
+        "type": "W2",
+        "w2": {
+          "id": "w2-09b",
+          "employerName": "Spouse Employer",
+          "employerEin": "00-0000013",
+          "box1Wages": 58000,
+          "box2FederalTaxWithheld": 5900
+        }
+      }
+    ],
+    "answers": {}
+  },
+  "expected": {
+    "lines": {
+      "1040_1a": 130000,
+      "1040_11": 130000,
+      "1040_12": 31400,
+      "1040_15": 98600,
+      "1040_16": 11336,
+      "1040_19": 0,
+      "1040_24": 11336,
+      "1040_25a": 13700,
+      "1040_33": 13700,
+      "1040_34": 2364,
+      "1040_37": 0
+    },
+    "forms": [
+      "1040"
+    ],
+    "scopeFlagCodes": [],
+    "warningsCount": 0
+  }
+}

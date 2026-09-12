@@ -1,0 +1,48 @@
+{
+  "scenarioId": "02-single-high-wage-balance-due",
+  "description": "Single filer with 1 W-2, underwithheld, balance due",
+  "input": {
+    "taxYear": 2026,
+    "filingStatus": "SINGLE",
+    "filer": {
+      "ageOnDec31": 34,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "dependents": [],
+    "documents": [
+      {
+        "id": "w2-02",
+        "type": "W2",
+        "w2": {
+          "id": "w2-02",
+          "employerName": "Synthetic Beta LLC",
+          "employerEin": "00-0000002",
+          "box1Wages": 95000,
+          "box2FederalTaxWithheld": 11000
+        }
+      }
+    ],
+    "answers": {}
+  },
+  "expected": {
+    "lines": {
+      "1040_1a": 95000,
+      "1040_11": 95000,
+      "1040_12": 15700,
+      "1040_15": 79300,
+      "1040_16": 12158,
+      "1040_19": 0,
+      "1040_24": 12158,
+      "1040_25a": 11000,
+      "1040_33": 11000,
+      "1040_34": 0,
+      "1040_37": 1158
+    },
+    "forms": [
+      "1040"
+    ],
+    "scopeFlagCodes": [],
+    "warningsCount": 1
+  }
+}

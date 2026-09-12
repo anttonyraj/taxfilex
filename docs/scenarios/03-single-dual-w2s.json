@@ -1,0 +1,59 @@
+{
+  "scenarioId": "03-single-dual-w2s",
+  "description": "Single filer with 2 W-2s from job change during year",
+  "input": {
+    "taxYear": 2026,
+    "filingStatus": "SINGLE",
+    "filer": {
+      "ageOnDec31": 31,
+      "isBlind": false,
+      "canBeClaimedAsDependent": false
+    },
+    "dependents": [],
+    "documents": [
+      {
+        "id": "w2-03a",
+        "type": "W2",
+        "w2": {
+          "id": "w2-03a",
+          "employerName": "First Employer Co",
+          "employerEin": "00-0000003",
+          "box1Wages": 32000,
+          "box2FederalTaxWithheld": 3400
+        }
+      },
+      {
+        "id": "w2-03b",
+        "type": "W2",
+        "w2": {
+          "id": "w2-03b",
+          "employerName": "Second Employer Co",
+          "employerEin": "00-0000004",
+          "box1Wages": 48000,
+          "box2FederalTaxWithheld": 5600
+        }
+      }
+    ],
+    "answers": {}
+  },
+  "expected": {
+    "lines": {
+      "1040_1a": 80000,
+      "1040_11": 80000,
+      "1040_12": 15700,
+      "1040_15": 64300,
+      "1040_16": 8858,
+      "1040_19": 0,
+      "1040_24": 8858,
+      "1040_25a": 9000,
+      "1040_33": 9000,
+      "1040_34": 142,
+      "1040_37": 0
+    },
+    "forms": [
+      "1040"
+    ],
+    "scopeFlagCodes": [],
+    "warningsCount": 0
+  }
+}
