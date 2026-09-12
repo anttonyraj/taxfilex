@@ -229,8 +229,8 @@ export default function HomePage() {
       a: 'Yes. $39 includes your complete Federal return and one State return. Unlike TurboTax or H&R Block, there are no surprise $80 state filing charges, no deduction tiers, and no upsells for claiming student loans or investment income.',
     },
     {
-      q: 'What tax year does TaxFilex support?',
-      a: 'TaxFilex is engineered specifically for US Tax Year 2026 (filed in 2027), incorporating the updated standard deductions ($16,100 Single / $32,200 MFJ), revised child tax credit limits, and new bracket phaseouts.',
+      q: 'What tax years does TaxFilex support?',
+      a: 'TaxFilex features a multi-year deterministic rule engine supporting current and future tax years (including TY2024, TY2025, and TY2026+). The pure mathematical AST architecture isolates year-specific tax rules, standard deductions, and phaseouts into versioned mathematical libraries without code changes.',
     },
   ];
 
@@ -244,7 +244,7 @@ export default function HomePage() {
         <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/80 border border-emerald-500/30 backdrop-blur-md shadow-lg shadow-emerald-500/10 mb-8 animate-pulse-subtle">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
           <span className="text-xs font-semibold text-emerald-300 tracking-wide uppercase">
-            Neuro-Deterministic AI Engine • 6 Autonomous Agents
+            AI Deterministic Tax Engine • Autonomous Agents (Soon)
           </span>
           <span className="text-slate-600">|</span>
           <span className="text-xs text-slate-300 font-mono">Zero Document Retention</span>
@@ -268,20 +268,27 @@ export default function HomePage() {
         </p>
 
         {/* Action Buttons */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md">
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full max-w-2xl">
+          <Link
+            href="/free-w2"
+            className="w-full sm:w-auto px-7 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-slate-950 font-bold text-base shadow-xl shadow-emerald-500/25 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
+          >
+            <Sparkles className="w-5 h-5 text-slate-950" />
+            <span>⚡ Try Free W-2 AI Scanner</span>
+          </Link>
           <Link
             href="/return/upload"
-            className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-slate-950 font-bold text-base shadow-xl shadow-emerald-500/25 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-7 py-4 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 hover:text-white font-bold text-base border border-emerald-500/30 transition-all flex items-center justify-center gap-2"
           >
             <span>Start Filing — $39 Flat</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4 text-emerald-400" />
           </Link>
           <Link
             href="/demo"
-            className="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900/90 hover:bg-slate-850 text-slate-200 hover:text-white font-semibold text-base border border-slate-700/80 transition-all flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-6 py-4 rounded-xl bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-white font-semibold text-base border border-slate-700/80 transition-all flex items-center justify-center gap-2"
           >
-            <Play className="w-4 h-4 text-emerald-400 fill-emerald-400/20" />
-            <span>Live Interactive Demo</span>
+            <Play className="w-4 h-4 text-cyan-400 fill-cyan-400/20" />
+            <span>Live Demo</span>
           </Link>
         </div>
 

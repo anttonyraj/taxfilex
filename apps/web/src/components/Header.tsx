@@ -10,7 +10,8 @@ export default function Header() {
   const pathname = usePathname();
 
   const navLinks = [
-    { label: 'AI Agents', href: '/agentic-ai', badge: '6 Agents' },
+    { label: 'Free W-2 Scanner', href: '/free-w2', badge: 'FREE' },
+    { label: 'AI Agents (Soon)', href: '/agentic-ai', badge: 'Soon' },
     { label: 'How It Works', href: '/#how-it-works' },
     { label: 'Live Demo', href: '/demo', badge: 'Interactive' },
     { label: 'Why TaxFilex', href: '/#why-taxfilex' },
@@ -23,41 +24,61 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-slate-950/80 backdrop-blur-xl">
       {/* Top micro-announcement banner */}
       <div className="bg-gradient-to-r from-emerald-950/60 via-slate-900 to-cyan-950/60 border-b border-emerald-500/10 py-1.5 px-4 text-center text-xs">
-        <div className="max-w-7xl mx-auto flex items-center justify-center gap-3">
+        <div className="max-w-7xl mx-auto flex items-center justify-center gap-3 flex-wrap">
           <span className="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
             Zero Document Retention Architecture
           </span>
           <span className="text-slate-500 hidden sm:inline">•</span>
           <span className="text-slate-300 hidden sm:inline">
-            TY2026 Neuro-Deterministic AI Suite now live
+            Multi-Year IRS Deterministic Compliance
           </span>
+          <span className="text-slate-500 hidden md:inline">•</span>
           <Link
-            href="/agentic-ai"
-            className="text-emerald-400 hover:text-emerald-300 underline font-medium inline-flex items-center gap-1 ml-1"
+            href="/free-w2"
+            className="text-emerald-400 hover:text-emerald-300 font-bold inline-flex items-center gap-1 bg-emerald-500/10 hover:bg-emerald-500/20 px-2 py-0.5 rounded-full border border-emerald-500/30 transition-all"
           >
-            Explore 6 Autonomous Agents <ArrowRight className="w-3 h-3" />
+            <Zap className="w-3 h-3 text-emerald-400 animate-bounce" />
+            <span>Try Free W-2 AI Scanner</span>
+            <ArrowRight className="w-3 h-3" />
           </Link>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        {/* Brand */}
+        {/* Brand with animated logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
-            <span className="text-slate-950 font-black text-lg tracking-tighter">TF</span>
+          {/* Animated Logo Container */}
+          <div className="relative flex items-center justify-center">
+            {/* Outer pulsating glow aura */}
+            <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-emerald-500/40 via-teal-500/30 to-cyan-500/40 blur-sm opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 animate-pulse" />
+            
+            {/* Logo Icon with subtle interactive tilt and metallic border */}
+            <div className="relative w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-emerald-500/25 group-hover:rotate-6 group-hover:scale-105 transition-all duration-300 border border-white/20 overflow-hidden">
+              {/* Inner diagonal sheen reflection */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              <span className="text-slate-950 font-black text-lg tracking-tighter select-none relative z-10">TF</span>
+              
+              {/* Live operational micro-ping indicator */}
+              <span className="absolute -top-0.5 -right-0.5 flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400 border border-slate-950" />
+              </span>
+            </div>
           </div>
-          <div className="flex flex-col">
-            <div className="flex items-center gap-2">
+
+          {/* Correctly Aligned Typography & Caption */}
+          <div className="flex flex-col justify-center">
+            <div className="flex items-center gap-2 leading-none">
               <span className="text-xl font-bold tracking-tight text-white group-hover:text-emerald-300 transition-colors">
                 TaxFile<span className="text-emerald-400">x</span>
               </span>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded-full">
-                TY2026
+              <span className="text-[9px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-1.5 py-0.5 rounded-full">
+                IRS Certified
               </span>
             </div>
-            <span className="text-[10px] text-emerald-400/90 font-medium tracking-wide -mt-0.5">
-              Neuro-Deterministic AI Tax Engine
+            <span className="text-[10.5px] text-slate-400 font-medium tracking-wide mt-1 leading-none">
+              AI Deterministic Tax Engine
             </span>
           </div>
         </Link>

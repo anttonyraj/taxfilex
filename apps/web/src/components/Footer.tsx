@@ -37,9 +37,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-500 flex items-center justify-center text-slate-950 font-black text-lg">
-                TF
+            <div className="flex items-center gap-3 group">
+              <div className="relative flex items-center justify-center">
+                <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-emerald-500/30 to-cyan-500/30 blur-sm opacity-60 animate-pulse" />
+                <div className="relative w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-500 flex items-center justify-center text-slate-950 font-black text-lg shadow-md shadow-emerald-500/20 border border-white/20">
+                  TF
+                </div>
               </div>
               <span className="text-xl font-bold text-white tracking-tight">
                 TaxFile<span className="text-emerald-400">x</span>
@@ -67,9 +70,15 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
+                <Link href="/free-w2" className="hover:text-emerald-400 transition-colors flex items-center gap-1 text-emerald-400 font-medium">
+                  Free W-2 AI Scanner
+                  <span className="text-[10px] bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-1.5 py-0.2 rounded font-mono font-bold">FREE</span>
+                </Link>
+              </li>
+              <li>
                 <Link href="/agentic-ai" className="hover:text-emerald-400 transition-colors flex items-center gap-1">
                   The Agentic AI Suite
-                  <span className="text-[10px] text-emerald-400 font-mono">6 AGENTS</span>
+                  <span className="text-[10px] text-emerald-400 font-mono">SOON</span>
                 </Link>
               </li>
               <li>
@@ -167,8 +176,18 @@ export default function Footer() {
 
         {/* Bottom Legal bar */}
         <div className="mt-12 pt-8 border-t border-slate-800/80 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-          <div>
-            © 2026 TaxFilex Technologies Inc. Built strictly for US Tax Year 2026.
+          <div className="flex flex-wrap items-center gap-1.5 text-xs text-slate-400">
+            <span>Powered by</span>
+            <a
+              href="https://www.aiworkx.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-emerald-400 hover:text-emerald-300 font-bold underline underline-offset-4 decoration-emerald-500/40 hover:decoration-emerald-400 transition-colors inline-flex items-center gap-0.5"
+            >
+              AIworkX <ArrowUpRight className="w-3 h-3 inline" />
+            </a>
+            <span className="text-slate-600 mx-1">•</span>
+            <span>Multi-Year IRS Deterministic Engine (TY2024, TY2025, TY2026+)</span>
           </div>
           <div className="flex items-center gap-6">
             <a

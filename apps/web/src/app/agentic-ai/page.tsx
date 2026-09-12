@@ -191,20 +191,45 @@ MEF_DISPATCHER::RECEIPT -> IRS_SUBMISSION_ID: 202604159876543210 (ACCEPTED 200 O
       <div className="text-center max-w-4xl mx-auto mb-16">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-semibold mb-6 shadow-lg shadow-emerald-500/10">
           <Sparkles className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
-          <span>AUTONOMOUS NEURO-DETERMINISTIC TAX INTELLIGENCE</span>
+          <span>AUTONOMOUS TAX INTELLIGENCE</span>
           <span className="text-slate-600">|</span>
-          <span className="text-xs text-slate-400 font-mono">TY2026</span>
+          <span className="text-xs text-cyan-300 font-mono font-bold bg-cyan-500/20 px-2 py-0.5 rounded border border-cyan-500/30">
+            PREVIEW • COMING SOON
+          </span>
         </div>
 
         <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight">
           The TaxFilex{' '}
-          <span className="text-gradient-emerald">Agentic AI Suite</span>
+          <span className="text-gradient-emerald">Agentic AI Suite</span>{' '}
+          <span className="text-xs sm:text-sm uppercase font-mono font-bold bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 text-emerald-300 border border-emerald-500/40 px-3 py-1 rounded-full align-middle inline-block ml-2">
+            Soon
+          </span>
         </h1>
 
         <p className="mt-6 text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
           Six specialized autonomous agents working in orchestration to extract documents, eliminate audit risks, optimize legal refunds, and shred files from volatile memory.
           <span className="text-emerald-400 font-semibold"> Moving beyond passive questionnaires into proactive, zero-retention tax intelligence.</span>
         </p>
+
+        {/* Free Scanner Banner */}
+        <div className="mt-8 p-4 rounded-2xl bg-gradient-to-r from-emerald-950/40 via-slate-900 to-cyan-950/40 border border-emerald-500/30 max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
+          <div className="space-y-1">
+            <div className="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
+              <Zap className="w-3.5 h-3.5" />
+              Try the Active Engine Right Now
+            </div>
+            <div className="text-sm text-slate-200">
+              Test our AI extraction and deterministic tax calculator with your W-2 for free.
+            </div>
+          </div>
+          <Link
+            href="/free-w2"
+            className="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold whitespace-nowrap shadow-lg shadow-emerald-500/20 flex items-center gap-1.5 transition-all"
+          >
+            <span>Scan W-2 Free</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
 
         {/* Quick stat badges */}
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto text-left">
