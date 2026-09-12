@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Shield, Lock, CheckCircle2, Terminal, ArrowUpRight, Cpu } from 'lucide-react';
+import Logo from './Logo';
 
 export default function Footer() {
   return (
@@ -37,17 +38,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-3 group">
-              <div className="relative flex items-center justify-center">
-                <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-emerald-500/30 to-cyan-500/30 blur-sm opacity-60 animate-pulse" />
-                <div className="relative w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-500 flex items-center justify-center text-slate-950 font-black text-lg shadow-md shadow-emerald-500/20 border border-white/20">
-                  TF
-                </div>
-              </div>
-              <span className="text-xl font-bold text-white tracking-tight">
-                TaxFile<span className="text-emerald-400">x</span>
-              </span>
-            </div>
+            <Logo size="md" showBadge={false} />
             <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
               The modern, auditable tax engine for individuals. Upload your W-2 and tax forms; our pure mathematical rules compute your return with zero document retention.
             </p>

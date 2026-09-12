@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ShieldCheck, Zap, Menu, X, ArrowRight, Play, Terminal } from 'lucide-react';
+import Logo from './Logo';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -57,41 +58,8 @@ export default function Header() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
-        {/* Brand with animated logo */}
-        <Link href="/" className="flex items-center gap-2.5 group shrink-0">
-          {/* Animated Logo Container */}
-          <div className="relative flex items-center justify-center shrink-0">
-            {/* Outer pulsating glow aura */}
-            <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-emerald-500/40 via-teal-500/30 to-cyan-500/40 blur-sm opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 animate-pulse" />
-            
-            {/* Logo Icon */}
-            <div className="relative w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-emerald-500/25 group-hover:rotate-6 group-hover:scale-105 transition-all duration-300 border border-white/20 overflow-hidden shrink-0">
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-              <span className="text-slate-950 font-black text-lg tracking-tighter select-none relative z-10">TF</span>
-              
-              {/* Live operational micro-ping indicator */}
-              <span className="absolute -top-0.5 -right-0.5 flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400 border border-slate-950" />
-              </span>
-            </div>
-          </div>
-
-          {/* Correctly Aligned Typography & Caption */}
-          <div className="flex flex-col justify-center whitespace-nowrap">
-            <div className="flex items-center gap-1.5 leading-none">
-              <span className="text-xl font-bold tracking-tight text-white group-hover:text-emerald-300 transition-colors">
-                TaxFile<span className="text-emerald-400">x</span>
-              </span>
-              <span className="text-[9px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-1.5 py-0.5 rounded-full leading-none">
-                IRS Certified
-              </span>
-            </div>
-            <span className="text-[10px] text-slate-400 font-medium tracking-wide mt-1 leading-none">
-              AI Deterministic Tax Engine
-            </span>
-          </div>
-        </Link>
+        {/* Brand with eye-catching animated logo */}
+        <Logo size="md" />
 
         {/* Desktop Nav - Clean, single-line, non-wrapping */}
         <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5 shrink-0">
@@ -247,16 +215,16 @@ export default function Header() {
               <X className="w-5 h-5" />
             </button>
 
-            <div className="text-center space-y-2">
-              <div className="w-12 h-12 mx-auto rounded-2xl bg-gradient-to-br from-emerald-400 to-cyan-500 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-emerald-500/25">
-                TF
+            <div className="text-center space-y-3 flex flex-col items-center">
+              <Logo size="lg" isLink={false} showBadge={false} showCaption={false} />
+              <div>
+                <h3 className="text-xl font-bold text-white tracking-tight">
+                  Sign In to TaxFilex
+                </h3>
+                <p className="text-xs text-slate-400 max-w-xs mx-auto mt-1">
+                  Access your encrypted volatile tax filing session. Zero documents stored on persistent disks.
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-white tracking-tight">
-                Sign In to TaxFilex
-              </h3>
-              <p className="text-xs text-slate-400 max-w-xs mx-auto">
-                Access your encrypted volatile tax filing session. Zero documents stored on persistent disks.
-              </p>
             </div>
 
             <div className="space-y-3 pt-2">
