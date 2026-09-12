@@ -244,26 +244,26 @@ export default function HomePage() {
         <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/80 border border-emerald-500/30 backdrop-blur-md shadow-lg shadow-emerald-500/10 mb-8 animate-pulse-subtle">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
           <span className="text-xs font-semibold text-emerald-300 tracking-wide uppercase">
-            AI Deterministic Tax Engine • Autonomous Agents (Soon)
+            AI Deterministic Tax Engine • Autonomous Suite (Soon)
           </span>
           <span className="text-slate-600">|</span>
-          <span className="text-xs text-slate-300 font-mono">Zero Document Retention</span>
+          <span className="text-xs text-slate-300 font-mono">Process &amp; Forget Security</span>
         </div>
 
         {/* Main Headline */}
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-5xl leading-[1.1]">
-          Agentic AI Precision.{' '}
+          Autonomous Tax Intelligence.{' '}
           <span className="text-gradient-emerald block sm:inline">
             Zero Document Retention.
           </span>{' '}
-          <span className="text-gradient-cyan">
-            Certified Tax Math.
+          <span className="text-gradient-cyan block sm:inline">
+            Pure Deterministic Execution.
           </span>
         </h1>
 
         {/* Subhead */}
         <p className="mt-6 text-lg sm:text-xl text-slate-300 max-w-3xl leading-relaxed">
-          Six autonomous AI agents orchestrate your tax filing — extracting forms in volatile RAM, optimizing every legal deduction, and verifying audit immunity. All backed by 100% deterministic mathematical execution.
+          Autonomous AI agents extract your tax forms in volatile RAM, uncover every legal deduction, and guard against audit triggers — with every dollar computed by audited, 100% deterministic mathematical execution.
           <span className="text-emerald-400 font-semibold"> No files stored. No math hallucinations. No surprise fees.</span>
         </p>
 
