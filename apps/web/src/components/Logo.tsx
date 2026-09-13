@@ -20,7 +20,7 @@ export default function Logo({
   href = '/',
   className = '',
 }: LogoProps) {
-  // Size metrics
+  // Sizing tokens
   const emblemSizes = {
     sm: 'w-8 h-8',
     md: 'w-10 h-10',
@@ -47,96 +47,190 @@ export default function Logo({
 
   const content = (
     <div className={`flex items-center gap-3 group select-none shrink-0 ${className}`}>
-      {/* Dynamic Animated Emblem Container */}
+      {/* Faceted Crystal Vault Shield with T-F-X Nexus Star */}
       <div className={`relative flex items-center justify-center shrink-0 ${emblemSizes[size]}`}>
-        {/* Layer 1: Ambient Pulsing Cyber Glow */}
-        <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-emerald-500/40 via-cyan-500/30 to-indigo-500/40 blur-md opacity-60 group-hover:opacity-100 group-hover:scale-125 transition-all duration-700 animate-pulse" />
+        {/* Layer 1: Ambient Emerald-Cyan Pulsing Glow Halo */}
+        <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-emerald-500/35 via-cyan-500/30 to-teal-400/35 blur-md opacity-65 group-hover:opacity-100 group-hover:scale-125 transition-all duration-700 animate-pulse" />
 
-        {/* Layer 2: 360-Degree Rotating Conic Orbit Ring */}
-        <div className="absolute -inset-[2px] rounded-2xl bg-[conic-gradient(from_0deg,#10b981,#06b6d4,#8b5cf6,#10b981)] opacity-75 group-hover:opacity-100 animate-spin-slow blur-[1px] transition-opacity duration-300" />
+        {/* Layer 2: Rotating Subtle Orbit Highlight */}
+        <div className="absolute -inset-[2px] rounded-2xl bg-[conic-gradient(from_0deg,#10b981,#06b6d4,#10b981)] opacity-40 group-hover:opacity-85 animate-spin-slow blur-[1px] transition-opacity duration-300" />
 
-        {/* Layer 3: Counter-rotating orbital particle accent */}
-        <div className="absolute -inset-[3px] rounded-2xl border border-dashed border-emerald-400/30 opacity-40 group-hover:opacity-80 animate-spin-slow-reverse pointer-events-none" />
+        {/* Layer 3: The Crystal Shield Vector Glass Housing */}
+        <div className="relative w-full h-full flex items-center justify-center transition-all duration-300 group-hover:scale-105">
+          {/* Animated Laser Sweep Sheen Across the Crystal Facets */}
+          <div className="absolute inset-0 rounded-xl overflow-hidden pointer-events-none z-20">
+            <div className="w-full h-full bg-gradient-to-r from-transparent via-cyan-200/25 to-transparent -translate-x-full animate-laser-sweep" />
+          </div>
 
-        {/* Layer 4: High-Tech Shield / Squircle Glass Matrix */}
-        <div className="relative w-full h-full rounded-xl bg-slate-950/95 border border-emerald-400/40 p-1 flex items-center justify-center shadow-xl shadow-emerald-500/20 group-hover:border-emerald-300/80 group-hover:shadow-emerald-400/30 group-hover:scale-105 transition-all duration-300 overflow-hidden">
-          {/* Animated Laser Sweep across the emblem */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-300/25 to-transparent -translate-x-full animate-laser-sweep pointer-events-none" />
-
-          {/* Precision High-Tech SVG Emblem */}
+          {/* Precision Faceted Crystal Vault Shield & T-F-X Nexus Star SVG */}
           <svg
-            viewBox="0 0 44 44"
+            viewBox="0 0 100 100"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="w-full h-full relative z-10 drop-shadow-[0_0_8px_rgba(16,185,129,0.5)] group-hover:drop-shadow-[0_0_12px_rgba(6,182,212,0.8)] transition-all duration-300"
+            className="w-full h-full relative z-10 drop-shadow-[0_0_8px_rgba(16,185,129,0.5)] group-hover:drop-shadow-[0_0_14px_rgba(6,182,212,0.85)] transition-all duration-300"
           >
             <defs>
-              {/* Primary Vibrant Gradient */}
-              <linearGradient id="tfx-grad-main" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#34d399" />
-                <stop offset="50%" stopColor="#06b6d4" />
-                <stop offset="100%" stopColor="#818cf8" />
+              {/* Outer Shield Frame Gradient */}
+              <linearGradient id="shieldRim" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#34D399" />
+                <stop offset="45%" stopColor="#06B6D4" />
+                <stop offset="100%" stopColor="#10B981" />
               </linearGradient>
 
-              {/* Accent Gold/Cyan Gradient */}
-              <linearGradient id="tfx-grad-accent" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#10b981" />
-                <stop offset="100%" stopColor="#67e8f9" />
+              {/* Facet Light Glow 1 */}
+              <linearGradient id="facetTopL" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#34D399" stopOpacity="0.45" />
+                <stop offset="100%" stopColor="#06B6D4" stopOpacity="0.1" />
               </linearGradient>
 
-              {/* Luminous Core Glow Filter */}
-              <filter id="core-glow" x="-20%" y="-20%" width="140%" height="140%">
+              {/* Facet Light Glow 2 */}
+              <linearGradient id="facetTopR" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#38BDF8" stopOpacity="0.5" />
+                <stop offset="100%" stopColor="#059669" stopOpacity="0.12" />
+              </linearGradient>
+
+              {/* Facet Bottom Bevel */}
+              <linearGradient id="facetBottom" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" stopColor="#06B6D4" stopOpacity="0.15" />
+                <stop offset="100%" stopColor="#10B981" stopOpacity="0.4" />
+              </linearGradient>
+
+              {/* T-F-X Star Luminous Neon Stroke */}
+              <linearGradient id="tfxStarNeon" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#FFFFFF" />
+                <stop offset="25%" stopColor="#34D399" />
+                <stop offset="75%" stopColor="#38BDF8" />
+                <stop offset="100%" stopColor="#10B981" />
+              </linearGradient>
+
+              {/* Radiant Center Sparkle Glow */}
+              <radialGradient id="nexusCoreGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#FFFFFF" stopOpacity="1" />
+                <stop offset="40%" stopColor="#67E8F9" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="#06B6D4" stopOpacity="0" />
+              </radialGradient>
+
+              {/* Filter for Cyber Bloom Glow */}
+              <filter id="crystalBloom" x="-20%" y="-20%" width="140%" height="140%">
                 <feGaussianBlur stdDeviation="2" result="blur" />
                 <feComposite in="SourceGraphic" in2="blur" operator="over" />
               </filter>
             </defs>
 
-            {/* Circuit Grid Backdrop */}
-            <line x1="6" y1="22" x2="38" y2="22" stroke="#10b981" strokeWidth="0.75" strokeDasharray="1.5 2" opacity="0.35" />
-            <line x1="22" y1="6" x2="22" y2="38" stroke="#06b6d4" strokeWidth="0.75" strokeDasharray="1.5 2" opacity="0.35" />
-
-            {/* Stylized Interlocking 'T' Crossbar (Tax Foundation) */}
+            {/* --- FACETED CRYSTAL VAULT SHIELD BODY --- */}
+            {/* Outer Shield Boundary Outline */}
             <path
-              d="M7 11.5C7 10.12 8.12 9 9.5 9H34.5C35.88 9 37 10.12 37 11.5C37 12.88 35.88 14 34.5 14H25V17H19V14H9.5C8.12 14 7 12.88 7 11.5Z"
-              fill="url(#tfx-grad-main)"
+              d="M50 6 L88 20 L80 56 L50 94 L20 56 L12 20 Z"
+              fill="#030712"
+              fillOpacity="0.9"
+              stroke="url(#shieldRim)"
+              strokeWidth="2.5"
+              strokeLinejoin="round"
             />
 
-            {/* Dynamic Kinetic 'X' Stem 1 (Diagonal Left to Right - Execution / Filing) */}
+            {/* Inner Shield Bevel Rim */}
             <path
-              d="M11 35C10.2 35 9.5 34.1 9.9 33.3L19.5 18H24.5L14.5 34.2C13.9 34.7 13.2 35 11 35Z"
-              fill="url(#tfx-grad-accent)"
-              opacity="0.95"
+              d="M50 14 L80 25 L73 52 L50 84 L27 52 L20 25 Z"
+              stroke="#06B6D4"
+              strokeWidth="1.2"
+              strokeOpacity="0.5"
+              fill="none"
+              strokeLinejoin="round"
             />
 
-            {/* Dynamic Kinetic 'X' Stem 2 (Diagonal Right to Left - Mathematics / Verification) */}
+            {/* Faceted Crystal Gem Triangles (Left Side) */}
+            <polygon points="50,6 12,20 20,25 50,14" fill="url(#facetTopL)" />
+            <polygon points="12,20 20,56 27,52 20,25" fill="url(#facetTopL)" opacity="0.7" />
+            <polygon points="20,56 50,94 50,84 27,52" fill="url(#facetBottom)" />
+
+            {/* Faceted Crystal Gem Triangles (Right Side) */}
+            <polygon points="50,6 88,20 80,25 50,14" fill="url(#facetTopR)" />
+            <polygon points="88,20 80,56 73,52 80,25" fill="url(#facetTopR)" opacity="0.7" />
+            <polygon points="80,56 50,94 50,84 73,52" fill="url(#facetBottom)" />
+
+            {/* Internal Crystal Ridge Lines */}
+            <line x1="50" y1="6" x2="50" y2="14" stroke="#67E8F9" strokeWidth="1.5" strokeOpacity="0.7" />
+            <line x1="50" y1="84" x2="50" y2="94" stroke="#34D399" strokeWidth="1.5" strokeOpacity="0.7" />
+            <line x1="12" y1="20" x2="20" y2="25" stroke="#34D399" strokeWidth="1.2" strokeOpacity="0.6" />
+            <line x1="88" y1="20" x2="80" y2="25" stroke="#38BDF8" strokeWidth="1.2" strokeOpacity="0.6" />
+
+            {/* --- CENTRAL T-F-X NEXUS STAR --- */}
+            {/* 8-Point Outer Star Contour */}
             <path
-              d="M33 35C33.8 35 34.5 34.1 34.1 33.3L24.5 18H19.5L29.5 34.2C30.1 34.7 30.8 35 33 35Z"
-              fill="url(#tfx-grad-main)"
+              d="M50 16 L56 34 L76 34 L60 46 L66 66 L50 54 L34 66 L40 46 L24 34 L44 34 Z"
+              stroke="url(#tfxStarNeon)"
+              strokeWidth="2.4"
+              strokeLinejoin="round"
+              fill="#071824"
+              fillOpacity="0.75"
+              filter="url(#crystalBloom)"
             />
 
-            {/* Intersecting High-Voltage Quantum Nexus Core */}
+            {/* Letter 'T' & 'F' Architectural Framework */}
+            {/* Top Bar of 'T' & 'F' */}
+            <path
+              d="M36 34 H64"
+              stroke="#FFFFFF"
+              strokeWidth="3.2"
+              strokeLinecap="round"
+            />
+            {/* Vertical Stem of 'T' & 'F' */}
+            <path
+              d="M50 34 V64"
+              stroke="#FFFFFF"
+              strokeWidth="3.2"
+              strokeLinecap="round"
+            />
+            {/* Mid Bar of 'F' */}
+            <path
+              d="M50 44 H62"
+              stroke="#38BDF8"
+              strokeWidth="2.8"
+              strokeLinecap="round"
+            />
+
+            {/* Crossing Diagonals of 'X' */}
+            {/* Diagonal Stroke 1 (Top-Left to Bottom-Right) */}
+            <path
+              d="M37 36 L63 62"
+              stroke="url(#shieldRim)"
+              strokeWidth="2.6"
+              strokeLinecap="round"
+              strokeOpacity="0.9"
+            />
+            {/* Diagonal Stroke 2 (Top-Right to Bottom-Left) */}
+            <path
+              d="M63 36 L37 62"
+              stroke="url(#shieldRim)"
+              strokeWidth="2.6"
+              strokeLinecap="round"
+              strokeOpacity="0.9"
+            />
+
+            {/* Central Radiant Nexus Diamond (Luminous Core) */}
             <polygon
-              points="22,17 26,22 22,27 18,22"
-              fill="#ffffff"
-              filter="url(#core-glow)"
+              points="50,42 56,48 50,54 44,48"
+              fill="url(#nexusCoreGlow)"
               className="animate-pulse"
             />
             <polygon
-              points="22,18.5 24.5,22 22,25.5 19.5,22"
-              fill="#06b6d4"
+              points="50,45 53,48 50,51 47,48"
+              fill="#FFFFFF"
             />
 
-            {/* Circuit Terminal Ledger Nodes */}
-            <circle cx="8" cy="11.5" r="1.8" fill="#ffffff" />
-            <circle cx="36" cy="11.5" r="1.8" fill="#38bdf8" />
-            <circle cx="11" cy="33.5" r="1.8" fill="#34d399" />
-            <circle cx="33" cy="33.5" r="1.8" fill="#818cf8" />
+            {/* Precision Circuit Terminal Nodes on Star Tips */}
+            <circle cx="50" cy="16" r="2" fill="#FFFFFF" />
+            <circle cx="76" cy="34" r="2" fill="#38BDF8" />
+            <circle cx="66" cy="66" r="2" fill="#34D399" />
+            <circle cx="50" cy="80" r="1.8" fill="#10B981" />
+            <circle cx="34" cy="66" r="2" fill="#34D399" />
+            <circle cx="24" cy="34" r="2" fill="#38BDF8" />
           </svg>
 
           {/* Live Operational Status Micro-Pulse */}
-          <span className="absolute top-1 right-1 flex h-2 w-2 z-20">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-80" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400 shadow-[0_0_6px_#34d399]" />
+          <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5 z-30">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-85" />
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400 shadow-[0_0_8px_#34D399]" />
           </span>
         </div>
       </div>
@@ -144,7 +238,7 @@ export default function Logo({
       {/* Typography & Brand Wordmark */}
       <div className="flex flex-col justify-center whitespace-nowrap">
         <div className="flex items-center gap-2 leading-none">
-          {/* Main Wordmark with Shimmer & Glow */}
+          {/* Main Wordmark with Metallic Lustre */}
           <span className={`font-black tracking-tight text-white transition-all duration-300 flex items-center ${titleSizes[size]}`}>
             <span className="bg-gradient-to-r from-white via-slate-100 to-slate-300 bg-clip-text text-transparent group-hover:from-white group-hover:to-emerald-200">
               TaxFile
