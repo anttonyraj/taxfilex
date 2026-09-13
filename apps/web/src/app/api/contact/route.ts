@@ -16,6 +16,7 @@ export async function POST(req: NextRequest) {
     const timestamp = new Date().toISOString();
 
     const payload = {
+      type: 'contact',
       timestamp,
       ticketId,
       name: name || 'Anonymous Taxpayer',

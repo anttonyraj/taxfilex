@@ -3,6 +3,7 @@ import './globals.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import TaxBgAnimation from '../components/TaxBgAnimation';
+import VisitorTracker from '../components/VisitorTracker';
 
 export const metadata: Metadata = {
   title: 'TaxFilex — Instant Tax Filing. Zero Document Retention. Pure Deterministic Math.',
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <body className="min-h-screen bg-slate-950 text-slate-100 antialiased selection:bg-emerald-500 selection:text-slate-950 flex flex-col relative">
+        <VisitorTracker />
         <TaxBgAnimation />
         <Header />
         <div className="flex-1 relative z-10">{children}</div>
