@@ -257,7 +257,7 @@ export default function Logo({
           {showBadge && (
             <div className={`flex items-center gap-1 font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 rounded-full leading-none group-hover:border-emerald-400/60 group-hover:bg-emerald-500/20 transition-all ${badgeSizes[size]}`}>
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span>IRS Certified</span>
+              <span>IRS Compliant</span>
             </div>
           )}
         </div>

@@ -252,18 +252,15 @@ export default function HomePage() {
 
         {/* Main Headline */}
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-4xl leading-[1.1]">
-          File Taxes with AI.{' '}
+          AI Document Vision Reads Your Forms.{' '}
           <span className="text-gradient-emerald block sm:inline">
-            Zero Files Stored.
-          </span>{' '}
-          <span className="text-gradient-cyan block sm:inline">
-            100% Accurate.
+            Audited IRS Math Computes Every Penny.
           </span>
         </h1>
 
         {/* Subhead */}
         <p className="mt-6 text-base sm:text-xl text-slate-300 max-w-2xl leading-relaxed">
-          Upload your W-2 or tax forms. Our AI extracts your numbers in temporary RAM and calculates your exact 2026 refund in seconds — with pure mathematical accuracy and zero files kept on disk.
+          Upload your W-2 or 1099. Our vision model extracts your numbers in ephemeral RAM while our verified deterministic engine calculates your exact 2026 refund — with zero files kept on disk.
         </p>
 
         {/* Action Buttons */}
