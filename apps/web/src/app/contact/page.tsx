@@ -18,21 +18,47 @@ export default function ContactPage() {
   const [category, setCategory] = useState<'support' | 'security' | 'cpa' | 'partners'>('support');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const [ticketId, setTicketId] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !message) return;
 
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setErrorMessage('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          category,
+          message,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || 'Failed to submit message');
+      }
+
+      setTicketId(data.ticketId || `TX-${Math.floor(100000 + Math.random() * 900000)}`);
       setIsSubmitted(true);
-      setTicketId(`TX-${Math.floor(100000 + Math.random() * 900000)}`);
-    }, 900);
+    } catch (err: any) {
+      console.error('Submission failed:', err);
+      setErrorMessage(err.message || 'Network error. Please try again or email us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -141,6 +167,26 @@ export default function ContactPage() {
 
                 <div>
                   <label className="block text-xs font-medium text-slate-300 mb-1.5">
+                    Phone Number <span className="text-slate-500 text-[11px]">(Optional - for direct callback)</span>
+                  </label>
+                  <input
+                    type="tel"
+                    placeholder="+1 (555) 000-0000"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    className="w-full p-3.5 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 text-sm transition-colors"
+                  />
+                </div>
+
+                {errorMessage && (
+                  <div className="p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs flex items-center gap-2">
+                    <span>⚠️</span>
+                    <span>{errorMessage}</span>
+                  </div>
+                )}
+
+                <div>
+                  <label className="block text-xs font-medium text-slate-300 mb-1.5">
                     Your Message <span className="text-emerald-400">*</span>
                   </label>
                   <textarea
@@ -218,9 +264,10 @@ export default function ContactPage() {
                 <Mail className="w-4 h-4" />
               </div>
               <div>
-                <div className="font-semibold text-white">Email Communications</div>
-                <div className="text-slate-400">support@taxfilex.com</div>
-                <div className="text-slate-400">security@taxfilex.com</div>
+                <div className="font-semibold text-white">Direct Email Contact</div>
+                <a href="mailto:anttonyraj@gmail.com" className="text-emerald-400 hover:text-emerald-300 transition-colors block">
+                  anttonyraj@gmail.com
+                </a>
               </div>
             </div>
 
@@ -241,10 +288,10 @@ export default function ContactPage() {
               <div>
                 <div className="font-semibold text-white">Privacy &amp; Security Desk</div>
                 <a
-                  href="mailto:security@taxfilex.com"
+                  href="mailto:anttonyraj@gmail.com"
                   className="text-emerald-400 hover:underline"
                 >
-                  security@taxfilex.com
+                  anttonyraj@gmail.com
                 </a>
               </div>
             </div>
